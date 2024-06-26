@@ -16,6 +16,9 @@ import { HelmetProvider } from 'react-helmet-async'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { StoreProvider } from './Store'
+import CartPage from './pages/CartPage'
+import SigninPage from './pages/SigninPage'
+import SignupPage from './pages/SignupPage'
 
 // axios.defaults.baseURL =
 //   process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : '/'
@@ -33,6 +36,18 @@ const router = createBrowserRouter(
       <Route
         path="product/:slug"
         element={<ProductPage />}
+      />
+      <Route
+        path="cart"
+        element={<CartPage />}
+      />
+      <Route
+        path="signin"
+        element={<SigninPage />}
+      />
+      <Route
+        path="signup"
+        element={<SignupPage />}
       />
     </Route>
   )

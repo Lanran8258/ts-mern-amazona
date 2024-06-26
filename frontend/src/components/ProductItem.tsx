@@ -6,6 +6,7 @@ import { CartItem } from '../types/Cart'
 import { Product } from '../types/Product'
 import { convertProductToCartItem } from '../utils'
 import Rating from './Rating'
+import { toast } from 'react-toastify'
 
 export default function ProductItem({ product }: { product: Product }) {
   const { state, dispatch } = useContext(Store)
@@ -24,6 +25,7 @@ export default function ProductItem({ product }: { product: Product }) {
       type: 'CART_ADD_ITEM',
       payload: { ...item, quantity },
     })
+    toast.success('Product added to the cart')
   }
   return (
     <Card>
