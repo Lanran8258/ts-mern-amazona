@@ -5,6 +5,7 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import { productRouter } from './routers/productRouter'
 import { seedRouter } from './routers/seedRouter'
+import { userRouter } from './routers/userRouter'
 
 dotenv.config()
 const MONGODB_URI =
@@ -27,7 +28,10 @@ app.use(
         origin: ['http://localhost:5173'],
     })
 )
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 app.use('/api/products', productRouter)
+app.use('/api/users', userRouter)
 app.use('/api/seed', seedRouter)
 
 const PORT = 4000
