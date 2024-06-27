@@ -25,6 +25,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 import PlaceOrderPage from './pages/PlaceOrderPage'
 import OrderPage from './pages/OrderPage'
 import { PayPalScriptProvider } from '@paypal/react-paypal-js'
+import OrderHistoryPage from './pages/OrderHistoryPage'
 
 // axios.defaults.baseURL =
 //   process.env.NODE_ENV === 'development' ? 'http://localhost:4000' : '/'
@@ -74,6 +75,10 @@ const router = createBrowserRouter(
         <Route
           path="/order/:id"
           element={<OrderPage />}
+        />
+        <Route
+          path="/orderhistory"
+          element={<OrderHistoryPage />}
         />
       </Route>
     </Route>
