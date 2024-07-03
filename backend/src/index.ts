@@ -1,6 +1,5 @@
-import express, { Request, Response } from 'express'
-import { sampleProducts } from './data'
 import dotenv from 'dotenv'
+import express, { Request, Response } from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import path from 'path'
@@ -11,11 +10,14 @@ import { orderRouter } from './routers/orderRouter'
 import { keyRouter } from './routers/keyRouter'
 
 dotenv.config()
-const MONGODB_URI =
-    process.env.MONGODB_URI || 'mongodb://localhost/tsmernamazona'
+const MONGODB_URI = process.env.MONGODB_URI;
+console.log(MONGODB_URI)
+console.log(process.env.MONGODB_URI)
+console.log(process.env.PORT)
+
 mongoose.set('strictQuery', true)
 mongoose
-    .connect(MONGODB_URI)
+    .connect(MONGODB_URI!)
     .then(() => {
         console.log('connected to mongodb')
     })
