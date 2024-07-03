@@ -38,7 +38,7 @@ export default function ProductPage() {
       payload: { ...convertProductToCartItem(product!), quantity },
     })
     toast.success('Product added to the cart')
-    navigate('/cart')
+    // navigate('/cart')
   }
 
   return isLoading ? (
